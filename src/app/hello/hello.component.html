@@ -1,0 +1,16 @@
+<div class="container">
+  <p class="top-text -hidden" [class.show]="!showLogo">Welcome</p>
+  <div
+    class="outer-circle"
+    (click)="executeAnimation()"
+    [class.outer-circle__dashed]="!showLogo"
+  >
+    <div class="blue-circle" [class.hide]="!showLogo">
+      <img class="logo" [src]="this.logo" [class.hiddenZoomOut]="!showLogo" />
+    </div>
+    <div #robotCircle class="robot-circle">
+      <img #robot class="robot" [src]="this.robotImage" />
+    </div>
+  </div>
+  <p class="bottom-text" [class.hide]="!showLogo">Click above</p>
+</div>

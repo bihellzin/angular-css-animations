@@ -1,0 +1,154 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.top-text {
+  color: #464646;
+  font-size: 24px;
+}
+
+.outer-circle {
+  position: relative;
+  outline: solid 3px #2673f8;
+  transition: outline 1s linear;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.outer-circle__dashed {
+  outline: dashed #2673f8;
+  animation: rotate 20s infinite linear;
+  animation-delay: 1s;
+}
+
+.blue-circle {
+  position: absolute;
+  background-color: #2538ca;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 280px;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+}
+
+.robot-circle {
+  mix-blend-mode: multiply;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.robot {
+  mix-blend-mode: multiply;
+  width: auto;
+  height: 400px;
+}
+
+.bottom-text {
+  color: #888888;
+  font-size: 18px;
+}
+
+.robot-rotation {
+  animation: rotate-inverse 20s infinite linear;
+}
+
+.hiddenZoomOut {
+  animation: fadeOutZoomOut 1s linear forwards;
+}
+
+.visible {
+  animation: fadeIn 1.5s linear forwards;
+}
+
+.hide {
+  animation: fadeOut 1s linear forwards;
+}
+
+.show {
+  animation: fadeIn 1.5s linear forwards;
+}
+
+.-hidden {
+  opacity: 0;
+}
+
+.zoom-out {
+  animation: zoomOut 1s linear forwards;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    width: 0;
+    height: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes fadeOutZoomOut {
+  99% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    height: 0;
+    width: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-inverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
